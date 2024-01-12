@@ -13,9 +13,19 @@
     <div style="text-align: center;">
         <form action="id" method="get">
             <p style="text-align: center;"></p>
+
             <?php
-            echo "ต้องการดูกระทู้หมายเลข $_GET[id] <br>"
+            $id = $_GET['id'];
+            if(($id%2) == 0){
+                echo"ต้องการกระทู้หมายเลข $id" . "<br>";
+                echo"เป็นกระทู้หมายเลขคู่";
+            }
+            else{
+                echo"ต้องการกระทู้หมายเลข $id" . "<br>";
+                echo"เป็นกระทู้หมายเลขคี่";
+            }
             ?>
+
             <table style="border: 2px solid black; width: 40%;" align="center">
                 <tr>
                     <td colspan="2" style="background-color: #6cd2fe;">แสดงความคิดเห็น</td>
@@ -33,7 +43,7 @@
         </form>
     </div>
     </table>
-    <center><a href="index.html">กลับไปหน้าหลัก</a></center>
+    <center><a href="index.php">กลับไปหน้าหลัก</a></center>
 </body>
 
 </html>
