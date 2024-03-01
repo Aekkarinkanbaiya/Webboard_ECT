@@ -16,24 +16,24 @@ if(isset($_SESSION['id'])){
     <hr>
     <center>
     <?php
+        session_start();
+        if (isset($_SESSION['id'])){
+            header("location: index.php");
+            die();
+        }
         $login=$_POST["login"];
         $pwd=$_POST["pwd"];
+        $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
+        $sql="SELECT * FROM user where login='$login' and password=sha1('$pwd')";
+        $result=$conn->query($sql);
         if($login == "admin" && $pwd == "ad1234"){
-            $_SESSION['username']='admin';
-            $_SESSION['role']='a';
+            $_SESSION['username']=$date['login'];
+            $_SESSION['role']=$date['role'];
+            $_SESSION['user_id']=$date['id'];
             $_SESSION['id']=session_id();
             header("location:index.php");
             die();
             //echo"ยินดีต้อนรับคุณ ADMIN <br>";
-            //echo"<a href=index.php>กลับไปหน้าหลัก</a>";
-        }
-        else if($login == "member" && $pwd == "mem1234"){
-            $_SESSION['username']='member';
-            $_SESSION['role']='m';
-            $_SESSION['id']=session_id();
-            header("location:index.php");
-            die();
-            //echo"ยินดีต้อนรับคุณ MEMBER <br>";
             //echo"<a href=index.php>กลับไปหน้าหลัก</a>";
         }
         else{
@@ -43,6 +43,7 @@ if(isset($_SESSION['id'])){
             //echo"บัญชีหรือรหัสผ่านไม่ถูกต้อง <br>";
             //echo"<a href=index.php>กลับไปหน้าหลัก</a>";
         }
+        $conn=null;
     ?>
 </body>
 </html>

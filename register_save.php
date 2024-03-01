@@ -2,7 +2,7 @@
 if(isset($_POST['login']))
 {
 $login=$_POST['login'];
-$passwd=sha1($_POST['password']);
+$passwd=sha1($_POST['pwd']);
 $name=$_POST['name'];
 $gender=$_POST['gender'];
 $email=$_POST['email'];
@@ -21,7 +21,7 @@ $conn->exec($sql);
 $_SESSION['add_login']="success";
 }
 $conn=null;
-header("location:login.php");
+header("location:register.php");
     die();
 }else{
     header("location:index.php");

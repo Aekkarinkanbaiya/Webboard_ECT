@@ -17,31 +17,43 @@ if(isset($_SESSION['id'])){
 </head>
 <body>
    <div class="container">
-        <h1 style="text-align: center;" class="mt-3">Webboard wtnwp</h1>
+        <h1 style="text-align: center;" class="mt-3">Webboard 123</h1>
         <?php include "nav.php" ?>
         <div class="row mt-4">
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
             <div class="col-lg-6 col-md-8 col-sm-10">
+                <?php 
+                    if(isset($_SESSION['add_login'])){
+                        if($_SESSION['add_login']=="error"){
+                            echo "<div class='alert alert-danger'>
+                            ชื่อบัญชีซ้ำหรือฐานข้อมูลมีปัญหา</div>";
+                        }else{
+                            echo "<div class='alert alert-success'>
+                            เพิ่มบัญชีเรียบร้อยแล้ว</div>";
+                        }
+                        unset($_SESSION['add_login']);
+                    }
+                ?>
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white">เข้าสู่ระบบ</div>
                     <div class="card-body">
                         <form action="register_save.php" method="post">
                             <div class="row">
-                                <label class="col-lg-3 col-form-label">ชื่อบัญชี :</label>
+                                <label for="user" class="col-lg-3 col-form-label">ชื่อบัญชี :</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="login" class="form-control" required>
+                                    <input type="text" id="user" name="login" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">รหัสผ่าน :</label>
+                                <label for="pd" class="col-lg-3 col-form-label">รหัสผ่าน :</label>
                                 <div class="col-lg-9">
-                                    <input type="password" name="pwd" class="form-control" required>
+                                    <input type="password" id="pd" name="pwd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">ชื่อ-นามสกุล :</label>
+                                <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล :</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="name" class="form-control" required>
+                                    <input type="text" id="name" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -62,9 +74,9 @@ if(isset($_SESSION['id'])){
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">อีเมล:</label>
+                                <label for="email" class="col-lg-3 col-form-label">อีเมล :</label>
                                 <div class="col-lg-9">
-                                    <input type="email" name="email" class="form-control" required>
+                                    <input type="email" id="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
