@@ -26,7 +26,8 @@ if(isset($_SESSION['id'])){
         $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
         $sql="SELECT * FROM user where login='$login' and password=sha1('$pwd')";
         $result=$conn->query($sql);
-        if($login == "admin" && $pwd == "ad1234"){
+        if($result->rowCount()==1){
+            $data=$result->fetch(PDO::FETCH_ASSOC);
             $_SESSION['username']=$date['login'];
             $_SESSION['role']=$date['role'];
             $_SESSION['user_id']=$date['id'];

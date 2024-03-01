@@ -15,9 +15,9 @@ if($result ->rowCount()==1)
     $_SESSION['add_login']='error';
 }
 else{
-$sql="INSERT INTO user (login, password, name, gender, email, role)
+$sql1="INSERT INTO user (login, password, name, gender, email, role)
  VALUES ('$login','$passwd','$name','$gender','$email','m')";
-$conn->exec($sql);
+$conn->exec($sql1);
 $_SESSION['add_login']="success";
 }
 $conn=null;
