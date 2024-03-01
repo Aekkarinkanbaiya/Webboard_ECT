@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])){
                             <div class="row mt-3">
                                 <label class="col-lg-3 col-form-label">รหัสผ่าน</label>
                                 <div>
-                                    <input type="passwrod" name="pwd" class="form-control" required>
+                                    <input type="password" name="pwd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
