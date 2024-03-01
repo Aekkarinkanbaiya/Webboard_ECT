@@ -10,11 +10,14 @@ if(isset($_SESSION['id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Webboard 123</title>
 </head>
 <body>
    <div class="container">
-        <h1 style="text-align: center;" class="mt-3">Webboard 123</h1>
+        <h1 style="text-align: center;" class="mt-3">Webboard wtnwp</h1>
         <?php include "nav.php" ?>
         <div class="row mt-4">
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
@@ -24,25 +27,25 @@ if(isset($_SESSION['id'])){
                     <div class="card-body">
                         <form action="register_save.php" method="post">
                             <div class="row">
-                                <label class="col-lg-3 col-form-label">ชื่อบัญชี</label>
+                                <label class="col-lg-3 col-form-label">ชื่อบัญชี :</label>
                                 <div class="col-lg-9">
                                     <input type="text" name="login" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">รหัสผ่าน</label>
-                                <div>
+                                <label class="col-lg-3 col-form-label">รหัสผ่าน :</label>
+                                <div class="col-lg-9">
                                     <input type="password" name="pwd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
-                                <div>
+                                <label class="col-lg-3 col-form-label">ชื่อ-นามสกุล :</label>
+                                <div class="col-lg-9">
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 form-label">เพศ:</label>
+                                <label class="col-lg-3 form-label">เพศ :</label>
                                 <div class="col-lg-9">
                                     <div form-check>
                                         <input type="radio" name="gender" value="m" class="form-check-input" required>
@@ -64,10 +67,12 @@ if(isset($_SESSION['id'])){
                                     <input type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
-                            <div>
-                                <div>
-                                    <button type="submit" class="btn btn-primary btn-sm me-2"><i class="bi bi-save"></i>สมัครสมาชิก</button>
-                                    <button type="reset" class="btn btn-danger btn-sm"><i class="bi bi-x-square"></i>ยกเลิก</button>
+                            <div class="row mt-3">
+                                <div class="col-lg-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary btn-sm me-2">
+                                        <i class="bi bi-save"></i>สมัครสมาชิก</button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-x-square"></i>ยกเลิก</button>
                                 </div>
                             </div>
                         </form>
@@ -77,5 +82,6 @@ if(isset($_SESSION['id'])){
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
         </div>
    </div>
+   <br>
 </body>
 </html>
