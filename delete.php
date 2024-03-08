@@ -1,12 +1,11 @@
-<?php
+<?php 
 session_start();
-if(isset($_SESSION['id']) && $_SESSION['role']=='a'){
-    $id=$_GET['id'];
-    echo "ลบกระทู้ หมายเลข$id";
-}
-else{
-    header("location:index.php");
-    die();
-}
+$p = $_GET['id'];
+if(isset($_SESSION['id']) && $_SESSION['role'] == 'a'){
+        echo "ลบกระทู้ หมายเลข $p";
+ }
 
+else
+header("Location:index.php");
+die();
 ?>
