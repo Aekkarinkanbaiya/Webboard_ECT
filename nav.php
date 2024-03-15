@@ -13,7 +13,7 @@
 
                         <li class="nav-item dropdown">
                             <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-fill"></i> <?php echo $_SESSION['usename'] ?>
+                                <i class="bi bi-person-fill"></i> <?php echo $_SESSION['username'] ?>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="logout.php"> <i class="bi bi-power"></i> ออกจากระบบ</a></li>
