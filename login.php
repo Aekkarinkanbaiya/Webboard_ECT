@@ -40,9 +40,9 @@ if (isset($_SESSION['id'])) {
                             <input type="text" id="user" class="form-control" name="login" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="password" class="form-lable">Password:</label>
+                            <label for="pwd" class="form-lable">Password:</label>
                             <div class="input-group">
-                            <input type="password" name="password" id="pwd" class="form-control" required>
+                            <input type="password" name="pwd" id="pwd" class="form-control" required>
                             <span class="input-group-text" onclick="password_show_hide()">
                             <i class="bi bi-eye-fill" id="show_eye"></i>
                             <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
